@@ -1,88 +1,76 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sammy Topup Terpercaya</title>
-
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:#111;
 color:white;
 }
-
-header{
-background:linear-gradient(90deg,red,orange);
+.header{
+background:linear-gradient(to right,red,orange);
 padding:20px;
 text-align:center;
 font-size:22px;
 font-weight:bold;
 }
-
 .container{
-padding:15px;
-max-width:500px;
-margin:auto;
+padding:20px;
 }
-
 .card{
 background:#1c1c1c;
-padding:15px;
+padding:20px;
 border-radius:10px;
-margin-bottom:15px;
 }
-
-h2{
-margin-top:0;
+label{
 color:orange;
+font-weight:bold;
 }
-
-input,select{
-width:100%;
-padding:10px;
-margin-top:8px;
-margin-bottom:12px;
-border:none;
-border-radius:6px;
-}
-
-button{
+select,input{
 width:100%;
 padding:12px;
-background:red;
-border:none;
+margin:10px 0;
 border-radius:8px;
+border:none;
+font-size:15px;
+}
+button{
+width:100%;
+padding:15px;
+background:red;
 color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
 font-weight:bold;
 cursor:pointer;
 }
-
 button:hover{
-background:orange;
+background:darkred;
 }
-
-footer{
+.footer{
 text-align:center;
 padding:15px;
-background:#1c1c1c;
-font-size:12px;
 margin-top:20px;
+background:#1c1c1c;
+font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="header">
 🔥 Sammy Topup Terpercaya 🔥
-</header>
+</div>
 
 <div class="container">
-
 <div class="card">
-<h2>Pilih Game</h2>
+
+<label>Pilih Game</label>
 <select id="game">
 <option>Free Fire</option>
 <option>Mobile Legends</option>
@@ -90,48 +78,58 @@ margin-top:20px;
 <option>Genshin Impact</option>
 </select>
 
-<h2>ID Game</h2>
+<label>ID Game</label>
 <input type="text" id="idgame" placeholder="Masukkan ID Game">
 
-<h2>Jumlah Diamond</h2>
+<label>Jumlah Diamond</label>
 <select id="diamond">
-<option value="1">1 Diamond - Rp1.000</option>
-<option value="5">5 Diamond - Rp5.000</option>
-<option value="10">10 Diamond - Rp10.000</option>
-<option value="50">50 Diamond - Rp50.000</option>
-<option value="100">100 Diamond - Rp100.000</option>
-<option value="500">500 Diamond - Rp500.000</option>
-<option value="1000">1000 Diamond - Rp1.000.000</option>
-<option value="5000">5000 Diamond - Rp5.000.000</option>
-<option value="10000">10000 Diamond - Rp10.000.000</option>
+<option value="1000">1 Diamond - Rp1.000</option>
+<option value="5000">5 Diamond - Rp5.000</option>
+<option value="10000">10 Diamond - Rp10.000</option>
+<option value="20000">20 Diamond - Rp20.000</option>
+<option value="50000">50 Diamond - Rp50.000</option>
+<option value="100000">100 Diamond - Rp100.000</option>
+<option value="500000">500 Diamond - Rp500.000</option>
+<option value="1000000">1000 Diamond - Rp1.000.000</option>
 </select>
 
-<button onclick="kirim()">Pesan Sekarang</button>
-</div>
+<label>Metode Pembayaran</label>
+<select id="metode">
+<option>DANA</option>
+<option>OVO</option>
+<option>GoPay</option>
+<option>QRIS</option>
+<option>Transfer Bank</option>
+</select>
+
+<button onclick="kirimWA()">Pesan Sekarang</button>
 
 </div>
+</div>
 
-<footer>
+<div class="footer">
 © 2026 Sammy Topup Terpercaya | WhatsApp: 083107288718
-</footer>
+</div>
 
 <script>
-function kirim(){
+function kirimWA(){
 var game=document.getElementById("game").value;
 var id=document.getElementById("idgame").value;
-var diamond=document.getElementById("diamond").value;
+var diamond=document.getElementById("diamond").options[document.getElementById("diamond").selectedIndex].text;
+var metode=document.getElementById("metode").value;
 
 if(id==""){
 alert("Masukkan ID Game dulu!");
 return;
 }
 
-var pesan="Halo Sammy Topup, saya mau topup %0A"+
-"Game: "+game+"%0A"+
-"ID: "+id+"%0A"+
-"Jumlah Diamond: "+diamond;
+var pesan="Halo Admin Sammy Topup Terpercaya%0A%0ASaya ingin topup:%0A%0AGame: "+game+
+"%0AID: "+id+
+"%0ADiamond: "+diamond+
+"%0AMetode Pembayaran: "+metode+
+"%0A%0AMohon diproses ya.";
 
-window.open("https://wa.me/6283107288718?text="+pesan);
+window.open("https://wa.me/6283107288718?text="+pesan,"_blank");
 }
 </script>
 
