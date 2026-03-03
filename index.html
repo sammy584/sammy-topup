@@ -18,20 +18,29 @@ text-align:center;
 font-size:22px;
 font-weight:bold;
 }
+.timer{
+background:black;
+text-align:center;
+padding:10px;
+font-size:18px;
+color:#00ff66;
+font-weight:bold;
+}
 .container{
 padding:20px;
-max-width:500px;
+max-width:600px;
 margin:auto;
 }
 .card{
 background:#1c1c1c;
 padding:20px;
 border-radius:12px;
-box-shadow:0 0 10px rgba(255,0,0,0.3);
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(255,0,0,0.3);
 }
-label{
+h2{
 color:orange;
-font-weight:bold;
+margin-top:0;
 }
 select,input{
 width:100%;
@@ -43,15 +52,13 @@ font-size:15px;
 }
 button{
 width:100%;
-padding:15px;
+padding:12px;
 background:#ff0000;
 color:white;
 border:none;
 border-radius:10px;
-font-size:16px;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 button:hover{
 background:#cc0000;
@@ -59,9 +66,7 @@ background:#cc0000;
 .footer{
 text-align:center;
 padding:15px;
-margin-top:20px;
 background:#1c1c1c;
-font-size:14px;
 }
 </style>
 </head>
@@ -72,66 +77,99 @@ font-size:14px;
 🔥 Sammy Topup Terpercaya 🔥
 </div>
 
-<div class="container">
-<div class="card">
-
-<label>Pilih Game</label>
-<select id="game">
-<option>Free Fire</option>
-<option>Mobile Legends</option>
-<option>PUBG Mobile</option>
-<option>Genshin Impact</option>
-</select>
-
-<label>ID Game</label>
-<input type="text" id="idgame" placeholder="Masukkan ID Game">
-
-<label>Jumlah Diamond</label>
-<select id="diamond">
-<option>5 Diamond - Rp750</option>
-<option>10 Diamond - Rp1.500</option>
-<option>20 Diamond - Rp3.000</option>
-<option>50 Diamond - Rp7.000 🔥 Best Seller</option>
-<option>100 Diamond - Rp13.500</option>
-<option>250 Diamond - Rp32.000</option>
-<option>500 Diamond - Rp63.000</option>
-<option>1000 Diamond - Rp120.000 💎</option>
-</select>
-
-<label>Metode Pembayaran</label>
-<select id="metode">
-<option>DANA</option>
-<option>OVO</option>
-<option>GoPay</option>
-<option>QRIS</option>
-<option>Transfer Bank</option>
-</select>
-
-<button onclick="kirimWA()">Pesan Sekarang</button>
-
+<div class="timer">
+⏳ PROMO BERAKHIR DALAM: <span id="countdown"></span>
 </div>
+
+<div class="container">
+
+<!-- FREE FIRE -->
+<div class="card">
+<h2>💎 Free Fire (Promo)</h2>
+<input type="text" id="idff" placeholder="Masukkan ID Free Fire">
+<select id="ff">
+<option>720 DM - <s>Rp95.000</s> Rp89.000 🔥</option>
+<option>355 DM - <s>Rp48.000</s> Rp45.000</option>
+<option>140 DM - <s>Rp22.000</s> Rp20.000</option>
+<option>50 DM - <s>Rp8.000</s> Rp7.500</option>
+</select>
+<button onclick="kirim('Free Fire','idff','ff')">Topup FF</button>
+</div>
+
+<!-- MOBILE LEGENDS -->
+<div class="card">
+<h2>💎 Mobile Legends (Promo)</h2>
+<input type="text" id="idml" placeholder="Masukkan ID ML + Zone">
+<select id="ml">
+<option>86 DM - <s>Rp20.000</s> Rp18.500 🔥</option>
+<option>172 DM - <s>Rp38.000</s> Rp35.000</option>
+<option>344 DM - <s>Rp75.000</s> Rp70.000</option>
+<option>706 DM - <s>Rp150.000</s> Rp140.000</option>
+</select>
+<button onclick="kirim('Mobile Legends','idml','ml')">Topup ML</button>
+</div>
+
+<!-- PUBG -->
+<div class="card">
+<h2>💎 PUBG Mobile (Promo)</h2>
+<input type="text" id="idpubg" placeholder="Masukkan ID PUBG">
+<select id="pubg">
+<option>60 UC - <s>Rp16.000</s> Rp15.000 🔥</option>
+<option>325 UC - <s>Rp75.000</s> Rp70.000</option>
+<option>660 UC - <s>Rp150.000</s> Rp140.000</option>
+<option>1800 UC - <s>Rp375.000</s> Rp350.000</option>
+</select>
+<button onclick="kirim('PUBG Mobile','idpubg','pubg')">Topup PUBG</button>
+</div>
+
+<!-- GENSHIN -->
+<div class="card">
+<h2>💎 Genshin Impact (Promo)</h2>
+<input type="text" id="idgenshin" placeholder="Masukkan UID Genshin">
+<select id="genshin">
+<option>60 Crystal - <s>Rp16.000</s> Rp15.000 🔥</option>
+<option>300 Crystal - <s>Rp75.000</s> Rp70.000</option>
+<option>980 Crystal - <s>Rp230.000</s> Rp215.000</option>
+<option>1980 Crystal - <s>Rp460.000</s> Rp430.000</option>
+</select>
+<button onclick="kirim('Genshin Impact','idgenshin','genshin')">Topup Genshin</button>
+</div>
+
 </div>
 
 <div class="footer">
-© 2026 Sammy Topup Terpercaya | WhatsApp: 083107288718
+Promo terbatas! Harga bisa berubah kapan saja.<br>
+© 2026 Sammy Topup Terpercaya | WA: 083107288718
 </div>
 
 <script>
-function kirimWA(){
-var game=document.getElementById("game").value;
-var id=document.getElementById("idgame").value;
-var diamond=document.getElementById("diamond").value;
-var metode=document.getElementById("metode").value;
+var countdownTime = 24 * 60 * 60;
+setInterval(function(){
+var hours = Math.floor(countdownTime / 3600);
+var minutes = Math.floor((countdownTime % 3600) / 60);
+var seconds = countdownTime % 60;
+
+document.getElementById("countdown").innerHTML =
+hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+
+countdownTime--;
+if(countdownTime < 0){
+countdownTime = 24 * 60 * 60;
+}
+},1000);
+
+function kirim(game,idField,paketField){
+var id=document.getElementById(idField).value;
+var paket=document.getElementById(paketField).value;
 
 if(id==""){
-alert("Masukkan ID Game dulu!");
+alert("Masukkan ID dulu!");
 return;
 }
 
 var pesan="Halo Admin Sammy Topup Terpercaya%0A%0ASaya ingin topup:%0A%0AGame: "+game+
 "%0AID: "+id+
-"%0ADiamond: "+diamond+
-"%0AMetode Pembayaran: "+metode+
+"%0APaket Promo: "+paket+
 "%0A%0AMohon diproses ya.";
 
 window.open("https://wa.me/6283107288718?text="+pesan,"_blank");
