@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sammy Topup Terpercaya</title>
+
 <style>
 body{
 margin:0;
@@ -83,14 +85,15 @@ font-size:14px;
 
 <label>Jumlah Diamond</label>
 <select id="diamond">
-<option value="1000">1 Diamond - Rp1.000</option>
-<option value="5000">5 Diamond - Rp5.000</option>
-<option value="10000">10 Diamond - Rp10.000</option>
-<option value="20000">20 Diamond - Rp20.000</option>
-<option value="50000">50 Diamond - Rp50.000</option>
-<option value="100000">100 Diamond - Rp100.000</option>
-<option value="500000">500 Diamond - Rp500.000</option>
-<option value="1000000">1000 Diamond - Rp1.000.000</option>
+<option>1 Diamond - Rp150</option>
+<option>5 Diamond - Rp750</option>
+<option>10 Diamond - Rp1.500</option>
+<option>20 Diamond - Rp3.000</option>
+<option>50 Diamond - Rp7.000</option>
+<option>100 Diamond - Rp13.500</option>
+<option>250 Diamond - Rp32.000</option>
+<option>500 Diamond - Rp63.000</option>
+<option>1000 Diamond - Rp120.000</option>
 </select>
 
 <label>Metode Pembayaran</label>
@@ -115,7 +118,7 @@ font-size:14px;
 function kirimWA(){
 var game=document.getElementById("game").value;
 var id=document.getElementById("idgame").value;
-var diamond=document.getElementById("diamond").options[document.getElementById("diamond").selectedIndex].text;
+var diamond=document.getElementById("diamond").value;
 var metode=document.getElementById("metode").value;
 
 if(id==""){
