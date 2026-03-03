@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sammy Topup Terpercaya</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+}
+
+header{
+background:linear-gradient(90deg,red,orange);
+padding:20px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+padding:15px;
+max-width:500px;
+margin:auto;
+}
+
+.card{
+background:#1c1c1c;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+h2{
+margin-top:0;
+color:orange;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:12px;
+border:none;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:red;
+border:none;
+border-radius:8px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:orange;
+}
+
+footer{
+text-align:center;
+padding:15px;
+background:#1c1c1c;
+font-size:12px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🔥 Sammy Topup Terpercaya 🔥
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Pilih Game</h2>
+<select id="game">
+<option>Free Fire</option>
+<option>Mobile Legends</option>
+<option>PUBG Mobile</option>
+<option>Genshin Impact</option>
+</select>
+
+<h2>ID Game</h2>
+<input type="text" id="idgame" placeholder="Masukkan ID Game">
+
+<h2>Jumlah Diamond</h2>
+<select id="diamond">
+<option value="1">1 Diamond - Rp1.000</option>
+<option value="5">5 Diamond - Rp5.000</option>
+<option value="10">10 Diamond - Rp10.000</option>
+<option value="50">50 Diamond - Rp50.000</option>
+<option value="100">100 Diamond - Rp100.000</option>
+<option value="500">500 Diamond - Rp500.000</option>
+<option value="1000">1000 Diamond - Rp1.000.000</option>
+<option value="5000">5000 Diamond - Rp5.000.000</option>
+<option value="10000">10000 Diamond - Rp10.000.000</option>
+</select>
+
+<button onclick="kirim()">Pesan Sekarang</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 Sammy Topup Terpercaya | WhatsApp: 083107288718
+</footer>
+
+<script>
+function kirim(){
+var game=document.getElementById("game").value;
+var id=document.getElementById("idgame").value;
+var diamond=document.getElementById("diamond").value;
+
+if(id==""){
+alert("Masukkan ID Game dulu!");
+return;
+}
+
+var pesan="Halo Sammy Topup, saya mau topup %0A"+
+"Game: "+game+"%0A"+
+"ID: "+id+"%0A"+
+"Jumlah Diamond: "+diamond;
+
+window.open("https://wa.me/6283107288718?text="+pesan);
+}
+</script>
+
+</body>
+</html>
